@@ -145,7 +145,7 @@ while True:
     aaz_sum = 0
 
     for i in range(1,n_sample):
-        aaxs.insert(i-1, i)
+        aaxs[i-1] = aaxs[i]
         aax_sum += aaxs[i]*i
         aays[i-1] = aays[i]
         aay_sum += aays[i] * i
@@ -197,9 +197,9 @@ while True:
     Sz /= 10
 
     for i in range(0,10):
-        Rx += math.pow(abs(a_x[i] - Sx),0.5)
-        Ry += math.pow(abs(a_y[i] - Sy),0.5)
-        Rz += math.pow(abs(a_z[i] - Sz),0.5)
+        Rx += math.pow(abs(a_x[i] - Sx),2)
+        Ry += math.pow(abs(a_y[i] - Sy),2)
+        Rz += math.pow(abs(a_z[i] - Sz),2)
 
     Rx = Rx / 9    #得到方差
     Ry = Ry / 9
